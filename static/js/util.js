@@ -1,0 +1,6 @@
+
+const $ = x => document.querySelector(x);
+const $$ = x => document.querySelectorAll(x);
+
+
+export { $, $$ };

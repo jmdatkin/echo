@@ -59,7 +59,7 @@ io.on('connection', (socket) => {
         broadcastTexts();
     });
 
-    socket.on('nicknameUpdate', (nick) => {
+    socket.on('nick-update', (nick) => {
         connectedUsers[socket.id] = nick;
         broadcastUsers();
     });
