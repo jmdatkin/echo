@@ -3,7 +3,7 @@ const fs = require("fs");
 const app = require("express");
 const { connected } = require("process");
 
-let DEV = false;
+let DEV = true;
 
 if (process.env.DEVELOPMENT) {
     console.log("Starting server in development mode");
@@ -18,7 +18,8 @@ const https = DEV ?
     }, app);
 const io = require("socket.io")(https, {
     cors: {
-        origin: DEV ? "http://127.0.0.1:9000" : "http://jatkin.dev",
+        // origin: '*',
+        origin: DEV ? "http://localhost:9000" : "http://jatkin.dev",
         methods: ["GET", "POST"]
     }
 });
