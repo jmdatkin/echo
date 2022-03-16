@@ -109,8 +109,10 @@ class Text {
 
 const Draw = {
     drawGrid: function () {
-        const minorColor = "#e5e5e5";
-        const majorColor = "#dfdfdf";
+        // const minorColor = "#f0f0f0";
+        // const majorColor = "#e5e5e5";
+        const minorColor = "rgba(1.0,1.0,1.0,0.10)";
+        const majorColor = "rgba(1.0,1.0,1.0,0.15)";
 
         let majorGridSize = GRID_SIZE * 5;
         let i = GRID_SIZE - floorMod(WorldCoords.x, GRID_SIZE);
@@ -132,7 +134,7 @@ const Draw = {
             jj += GRID_SIZE;
         }
 
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
         ctx.strokeStyle = minorColor;
         ctx.stroke();
 
@@ -154,7 +156,7 @@ const Draw = {
             ctx.lineTo(c_width, jj);
             jj += majorGridSize;
         }
-        ctx.lineWidth = 3;
+        ctx.lineWidth = 1;
         ctx.strokeStyle = majorColor;
         ctx.stroke();
     },

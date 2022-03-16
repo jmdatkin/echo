@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: './src/app.js',
+    entry: './static/index.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
@@ -19,6 +19,13 @@ module.exports = {
             {
                 test: /\.(scss)$/,
                 use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'],
+                            plugins: ['@babel/plugin-transform-object-assign']
+                        }
+                    },
                     {
                         //Adds CSS to the DOM by injecting a `<style>` tag
                         loader: 'style-loader'
@@ -43,7 +50,7 @@ module.exports = {
                     {
                         //Loads a SASS/SCSS file and compiles it to CSS
                         loader: 'sass-loader'
-                    }
+                    },
                 ]
             }
         ]
@@ -51,7 +58,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            template: path.resolve(__dirname, './static/js/index.html')
         })
     ]
 };
