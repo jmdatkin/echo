@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <!--Canary-->
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <div id="DialogLayer">
+            <!-- <div id="TopBar"> -->
             <div class="dialog" id="left-sidebar">
                 <div class="dialog-section" id="coords">
                     <span class="dialog-section-header">Location</span>
-                    <span id="coord-indicator">x: 0, y: 0</span>
+                    <span id="coord-indicator">(0, 0)</span>
                 </div>
                 <div class="separator"></div>
                 <div class="dialog-section" id="color-picker">
@@ -33,7 +38,7 @@
             <div class="dialog" id="right-sidebar">
                 <div class="dialog-section" id="nickname">
                     <span class="dialog-section-header">Nickname</span>
-                    <input type="text" id="nickname-field" disabled/>
+                    <input type="text" id="nickname-field" disabled />
                     <a id="nickname-toggle-edit"><i class="fas fa-pencil-alt"></i></a>
                 </div>
                 <div class="separator"></div>
@@ -42,7 +47,13 @@
                     <ul id="connected-users-list">
                     </ul>
                 </div>
+                <div class="separator"></div>
+                <div class="dialog-section" id="connected-users">
+                    <span class="dialog-section-header">Map</span>
+                    <canvas id="heatmap"></canvas>
+                </div>
             </div>
+            <!-- </div> -->
         </div>
         <div class="canvas-wrapper">
             <canvas id="main-canv"></canvas>

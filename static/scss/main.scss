@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-    font-family: 'Veranda', sans-serif;
+    font-family: 'Roboto', 'Veranda', sans-serif;
 }
 
 .container {
@@ -29,11 +29,11 @@ body {
 .dialog {
     background-color: rgba(0.2,0.2,0.2,0.65);
     color: rgb(245, 245, 245);
-    border-radius: 5px;
+    // border-radius: 5px;
     border: solid 1px rgba(0.0,0.0,0.0,1.0);
-    // padding: 15px;
+    padding: 15px;
     padding: 15px 0;
-    box-shadow: 0 0 5px #777;
+    // box-shadow: 0 0 5px #777;
 }
 
 .dialog-section {
@@ -127,7 +127,7 @@ body {
     color:rgb(235, 235, 235);
     display: block;
     width: 100%;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 10px;
     flex-grow: 3;
     letter-spacing: 0.5pt;
@@ -149,13 +149,19 @@ body {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    padding: 14px 13px;
+    // padding: 14px 13px;
     box-sizing: border-box;
     pointer-events: none;
 }
 
 #DialogLayer > .dialog {
     pointer-events: auto;
+}
+
+#TopBar {
+    width: 100%;
+    height: 35px;
+    background-color: #222;
 }
 
 

@@ -28,7 +28,8 @@ evt.on('textUpdate', newTexts => {
 evt.on('coord-update', newCoords => {
     Object.assign(coords, newCoords)
     // coords = coords;
-    $("#coord-indicator").textContent = `x: ${coords.x}, y: ${coords.y}`;
+    // $("#coord-indicator").textContent = `x: ${coords.x}, y: ${coords.y}`;
+    $("#coord-indicator").textContent = `(${coords.x}, ${coords.y})`;
 });
 
 const step = function () {
