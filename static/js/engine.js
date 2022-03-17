@@ -3,6 +3,7 @@ import Canvas from './canvas';
 import evt from './events';
 
 let UserId = '';
+let connected = false;
 
 var iid;
 const persistTime = 7500;

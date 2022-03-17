@@ -58,7 +58,7 @@ const submitHandler = function () {
 
 //Check for enter
 const keypressHandler = function (e) {
-    if (e.code === 'Enter')
+    if (e.code === 'Enter' || e.code === 'NumpadEnter')
         submitHandler();
 };
 

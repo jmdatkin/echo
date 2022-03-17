@@ -91,9 +91,12 @@ const drawText = function (text) {
     let thisFontSize = FONT_SIZE;
     let fontString = `${thisFontSize}px ${FONT_STRING}`;
     ctx.font = fontString;
+    // ctx.textBaseline = "alpha";
 
     //Adjust for offset between canvas text render and DOM style properties
-    ctx.fillText(text.value, text.x - Engine.coords.x, text.y + FONT_SIZE - 2 - Engine.coords.y);
+    ctx.fillText(text.value,
+        text.x - Engine.coords.x,
+        text.y + FONT_SIZE - 2 - Engine.coords.y);
 };
 
 /*------------------ MOUSE EVENTS -------------------*/

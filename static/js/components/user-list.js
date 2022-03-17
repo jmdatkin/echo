@@ -14,8 +14,6 @@ const updateUsers = function (newUsers) {
         let li = document.createElement('li');
         let nickString = userList[userId];
 
-        console.log(Engine.UserId);
-
         if (userId === Engine.UserId) {
             nickString += " (YOU)";
         }

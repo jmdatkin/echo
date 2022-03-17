@@ -1,7 +1,5 @@
 import { EventEmitter } from 'events';
 
-let e = new EventEmitter();
+let evt = new EventEmitter();
 
-e.on('idx',() => console.log("Hello event!"));
-
-export default e;
+export default evt;
