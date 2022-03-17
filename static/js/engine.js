@@ -1,6 +1,6 @@
-import { $, $$ } from './util';
-import Canvas from './canvas';
-import evt from './events';
+import { $, $$ } from './util.js';
+import Canvas from './canvas.js';
+import evt from './events.js';
 
 let UserId = '';
 let connected = false;

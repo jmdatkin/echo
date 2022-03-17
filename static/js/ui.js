@@ -1,13 +1,13 @@
-import { $, $$ } from './util';
-import { FONT_SIZE, FONT_STRING } from './globals';
-import Engine from './engine';
-import evt from './events';
+import { $, $$ } from './util.js';
+import { FONT_SIZE, FONT_STRING } from './globals.js';
+import Engine from './engine.js';
+import evt from './events.js';
 
 
-import './components/color-picker';
-import './components/input-field';
-import './components/nickname-field';
-import './components/user-list';
+import './components/color-picker.js';
+import './components/input-field.js';
+import './components/nickname-field.js';
+import './components/user-list.js';
 
 /*
 const InputField = (function () {

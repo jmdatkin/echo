@@ -1,6 +1,6 @@
-import { $, $$ } from '../util';
-import Engine from '../engine';
-import evt from '../events';
+import { $, $$ } from '../util.js';
+import Engine from '../engine.js';
+import evt from '../events.js';
 
 const listElement = $("#connected-users-list");
 

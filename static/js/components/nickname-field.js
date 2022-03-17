@@ -1,5 +1,5 @@
-import { $, $$ } from '../util';
-import evt from '../events';
+import { $, $$ } from '../util.js';
+import evt from '../events.js';
 const inputElement = $("#nickname-field");
 const editButton = $("#nickname-toggle-edit");
 

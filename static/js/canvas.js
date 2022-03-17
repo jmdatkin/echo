@@ -1,8 +1,8 @@
-import { $, $$ } from './util';
-import Engine from './engine';
-import evt from './events';
-import { GRID_SIZE, FONT_SIZE, FONT_STRING } from './globals';
-import { COLORS } from './components/color-picker';
+import { $, $$ } from './util.js';
+import Engine from './engine.js';
+import evt from './events.js';
+import { GRID_SIZE, FONT_SIZE, FONT_STRING } from './globals.js';
+import { COLORS } from './components/color-picker.js';
 
 const canvas = $("#main-canv");
 const ctx = canvas.getContext("2d");

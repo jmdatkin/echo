@@ -1,5 +1,5 @@
-import './socket-handler';
-import UI from './ui';
-import Engine from './engine';
+import './socket-handler.js';
+import UI from './ui.js';
+import Engine from './engine.js';
 
 Engine.start();

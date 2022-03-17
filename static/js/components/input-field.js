@@ -1,9 +1,9 @@
-import { $, $$ } from '../util';
-import { FONT_SIZE, FONT_STRING } from '../globals';
-import { selectedColor } from './color-picker';
-import Engine from '../engine';
-import Text from '../text';
-import evt from '../events';
+import { $, $$ } from '../util.js';
+import { FONT_SIZE, FONT_STRING } from '../globals.js';
+import { selectedColor } from './color-picker.js';
+import Engine from '../engine.js';
+import Text from '../text.js';
+import evt from '../events.js';
 
 //User input DOM element
 const element = document.createElement('input');

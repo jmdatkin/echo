@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-import evt from './events';
+import evt from './events.js';
 
 const HOSTNAME = "localhost";
 const PORT = "9001";
