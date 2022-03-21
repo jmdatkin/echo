@@ -1,6 +1,7 @@
 import { texts, connectedUsers } from './server.js';
 
-const init = function (io) {
+const init = function (io, pubClient, subClient) {
+
 
     const broadcastTexts = function () {
         io.emit('textUpdate', { texts: texts });

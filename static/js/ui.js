@@ -8,6 +8,7 @@ import './components/color-picker.js';
 import './components/input-field.js';
 import './components/nickname-field.js';
 import './components/user-list.js';
+import './components/map.js';
 
 /*
 const InputField = (function () {

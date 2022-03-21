@@ -17,7 +17,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(scss)$/,
+                test: /.js$/,
                 use: [
                     {
                         loader: 'babel-loader',
@@ -25,7 +25,12 @@ module.exports = {
                             presets: ['@babel/preset-env'],
                             plugins: ['@babel/plugin-transform-object-assign']
                         }
-                    },
+                    }
+                ]
+            },
+            {
+                test: /\.(scss)$/,
+                use: [
                     {
                         //Adds CSS to the DOM by injecting a `<style>` tag
                         loader: 'style-loader'

@@ -1,5 +1,6 @@
 import { $, $$ } from './util.js';
 import Canvas from './canvas.js';
+import MapWidget from './components/map.js';
 import evt from './events.js';
 
 let UserId = '';
@@ -47,6 +48,7 @@ const step = function () {
         // let color = COLORS.toRGBA(textObj.color, alpha);//`rgba(0,0,0,${alpha}`;
         // Draw.drawText(textObj, color);
     });
+    MapWidget.update();
     window.requestAnimationFrame(step);
 };
 

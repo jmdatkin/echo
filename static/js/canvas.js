@@ -10,10 +10,30 @@ const ctx = canvas.getContext("2d");
 let c_width = 1600;
 let c_height = 900;
 
+let c_hw = c_width / 2;
+let c_hh = c_height / 2;
+
+const canvasCoords = {
+    get x() {
+        return Engine.coords.x - c_hw;
+    },
+
+    get y() {
+        return Engine.coords.y - c_hh;
+    },
+
+    get z() {
+        return Engine.coords.z;
+    }
+};
+
 
 const resize = function (w, h) {
     c_width = w;
     c_height = h;
+    c_hw = c_width / 2;
+    c_hh = c_height / 2;
+
     canvas.width = c_width;
     canvas.height = c_height;
 };
@@ -35,11 +55,13 @@ const drawGrid = function () {
     // const minorColor = "#f0f0f0";
     // const majorColor = "#e5e5e5";
     const minorColor = "rgba(1.0,1.0,1.0,0.10)";
-    const majorColor = "rgba(1.0,1.0,1.0,0.15)";
+    const majorColor = "rgba(1.0,1.0,1.0,0.11)";
 
     let majorGridSize = GRID_SIZE * 5;
-    let i = GRID_SIZE - floorMod(Engine.coords.x, GRID_SIZE);
-    let j = GRID_SIZE - floorMod(Engine.coords.y, GRID_SIZE);
+    // let i = GRID_SIZE - floorMod(Engine.coords.x, GRID_SIZE);
+    // let j = GRID_SIZE - floorMod(Engine.coords.y, GRID_SIZE);
+    let i = GRID_SIZE - floorMod(canvasCoords.x, GRID_SIZE);
+    let j = GRID_SIZE - floorMod(canvasCoords.y, GRID_SIZE);
 
     //Minor gridlines: gridlines within each group of 5
     let ii = i;
@@ -62,8 +84,8 @@ const drawGrid = function () {
     ctx.stroke();
 
     //Major gridlines: gridlines marking intervals of 5 minor gridlines
-    i = majorGridSize - floorMod(Engine.coords.x, majorGridSize);
-    j = majorGridSize - floorMod(Engine.coords.y, majorGridSize);
+    i = majorGridSize - floorMod(canvasCoords.x, majorGridSize);
+    j = majorGridSize - floorMod(canvasCoords.y, majorGridSize);
 
     ii = i;
     ctx.beginPath();
@@ -95,8 +117,8 @@ const drawText = function (text) {
 
     //Adjust for offset between canvas text render and DOM style properties
     ctx.fillText(text.value,
-        text.x - Engine.coords.x,
-        text.y + FONT_SIZE - 2 - Engine.coords.y);
+        text.x - canvasCoords.x,
+        text.y + FONT_SIZE - 2 - canvasCoords.y);
 };
 
 /*------------------ MOUSE EVENTS -------------------*/
@@ -169,9 +191,12 @@ const bindEvents = function () {
 bindEvents();
 
 export default {
+    c_width,
+    c_height,
     draw,
     drawGrid,
     drawText,
+    canvasCoords: canvasCoords,
     clear,
     resize
 };

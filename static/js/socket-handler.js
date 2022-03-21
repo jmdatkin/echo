@@ -24,6 +24,10 @@ socket.on("helloId", id => {
     evt.emit("hello-id", id);
 });
 
+socket.on("map-data-response", data => {
+    evt.emit("map-data-response", data);
+});
+
 evt.on("text", (text) => {
     socket.emit('text', text);
 });
